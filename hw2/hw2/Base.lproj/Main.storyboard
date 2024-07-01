@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hw2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="OBJECTS" translatesAutoresizingMaskIntoConstraints="NO" id="Qpa-om-Paz">
-                                <rect key="frame" x="21" y="-8" width="351" height="288"/>
+                                <rect key="frame" x="21" y="95" width="351" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="351" id="0Db-sK-wjX"/>
                                     <constraint firstAttribute="height" constant="288" id="BpN-iB-hPX"/>
@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYd-Hz-ZUH" userLabel="Login">
-                                <rect key="frame" x="21" y="512" width="351" height="34"/>
+                                <rect key="frame" x="21" y="522" width="351" height="34"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="351" id="QJu-W8-Z8c"/>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lN3-Cs-pbC" userLabel="Password">
-                                <rect key="frame" x="21" y="589" width="351" height="34"/>
+                                <rect key="frame" x="21" y="599" width="351" height="34"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="351" id="Bn7-ww-MMj"/>
@@ -61,7 +61,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkg-c6-Za3">
-                                <rect key="frame" x="114.66666666666669" y="675" width="164" height="65"/>
+                                <rect key="frame" x="114.66666666666669" y="685" width="164" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="2ji-kk-180"/>
                                     <constraint firstAttribute="width" constant="164" id="6Eo-ME-tFg"/>
@@ -102,7 +102,7 @@
             <objects>
                 <viewController id="0eK-Jd-i9A" userLabel="Second View Controller" customClass="SecondViewController" customModule="hw2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7sh-vr-Yu6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="telegram-peer-photo-size-2-3131511203439945848-1-0-0" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-x9-0V5">
@@ -143,7 +143,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Выйти"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="sng-dr-wru"/>
+                                    <action selector="Dismiss:" destination="0eK-Jd-i9A" eventType="touchUpInside" id="7XU-TX-XeA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Основная информация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9n-tY-tl8">
@@ -189,9 +189,6 @@
             <point key="canvasLocation" x="32.824427480916029" y="-27.464788732394368"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="sng-dr-wru"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="OBJECTS" width="351" height="288"/>
         <image name="telegram-peer-photo-size-2-3131511203439945848-1-0-0" width="640" height="640"/>

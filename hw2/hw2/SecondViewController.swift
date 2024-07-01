@@ -25,12 +25,17 @@ class SecondViewController: UIViewController {
     var password:String
     = ""
 
+    @IBAction func Dismiss(_ sender: Any) {
+            
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     @IBOutlet weak var InfAboutGuy: UILabel!
     @IBOutlet weak var Avatar: UIImageView!
     @IBOutlet weak var Mail: UILabel!
     @IBOutlet weak var Number: UILabel!
     @IBOutlet weak var FIO: UILabel!
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
         if login == "Dimas"{
             FIO.text = "Имя \(dimas.name)"
