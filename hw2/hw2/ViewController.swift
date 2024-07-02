@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    let Vc = SecondViewController()
     @IBAction func button(_ sender: Any) {
+        print("Кнопку нажали")
         let loginText = login.text ?? " "
         let passwordText = password.text ?? " "
             if (loginText == "Dimas" && passwordText == "dopka") || (loginText == "Timur" && passwordText == "dopka2005") {
-                navigationController?.pushViewController(SecondViewController(), animated: true)
+                navigationController?.pushViewController(Vc, animated: true)
             } else {
                 let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
