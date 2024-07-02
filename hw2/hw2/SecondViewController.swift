@@ -21,8 +21,8 @@ class User{
 }
 
 class SecondViewController: UIViewController {
-    let dimas = User(name: "Дима", number: "89174654210", mail: "Dimas@gmail.com",image: UIImage(named: "dimas"))
-    let timur = User(name: "Тимур", number: "89874034594", mail: "Timur@gmail.com",image: UIImage(named: "timur"))
+    let dimas = User(name: "Дима", number: "89174654210", mail: "Dimas@gmail.com",image: UIImage(named: "dima")!)
+    let timur = User(name: "Тимур", number: "89874034594", mail: "Timur@gmail.com",image: UIImage(named: "timur")!)
     var login:String = ""
     var password:String
     = ""
@@ -36,25 +36,24 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var Mail: UILabel!
     @IBOutlet weak var Number: UILabel!
     @IBOutlet weak var FIO: UILabel!
+    private func updateUserInfo(user: User, infoText: String) {
+           FIO.text = "Имя \(user.name)"
+           Number.text = "Номер телефона \(user.number)"
+           Mail.text = "Почта \(user.mail)"
+           Avatar.image = user.image
+           InfAboutGuy.text = infoText
+       }
+    private func checkLogin() {
+            if login == "Dimas" {
+                updateUserInfo(user: dimas, infoText: "Любит гулять и кушать люля")
+            } else if login == "Timur" {
+                updateUserInfo(user: timur, infoText: "Любить выпить и покурить")
+            }
+        }
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
-        if login == "Dimas"{
-            FIO.text = "Имя \(dimas.name)"
-            Number.text = "Номер телефона \(dimas.number)"
-            Mail.text = "Почта \(dimas.mail)"
-            Avatar.image = dimas.image
-            InfAboutGuy.text = "Любит гулять и кушать люля"
-        }
-        if login == "Timur"{
-            FIO.text = "Имя \(timur.name)"
-            Number.text = "Номер телефона \(timur.number)"
-            Mail.text = "Почта \(timur.mail)"
-            Avatar.image = timur.image
-            InfAboutGuy.text = "Любить выпить и покурить"
-        }
-        
-
+        checkLogin()
     }
     func config(password:String, login:String){
         self.password = password
