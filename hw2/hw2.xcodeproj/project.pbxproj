@@ -14,6 +14,8 @@
 		8D9D86F22C32D5B2003DE950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D86F12C32D5B2003DE950 /* Assets.xcassets */; };
 		8D9D86F52C32D5B2003DE950 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D86F42C32D5B2003DE950 /* Base */; };
 		8D9D86FF2C32E00E003DE950 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D86FE2C32E00E003DE950 /* SecondViewController.swift */; };
+		8DE4D2762C342F930046D438 /* Library.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4D2752C342F930046D438 /* Library.storyboard */; };
+		8DE4D27A2C34306D0046D438 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4D2792C34306D0046D438 /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8D9D86F42C32D5B2003DE950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D9D86F62C32D5B2003DE950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D9D86FE2C32E00E003DE950 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8DE4D2752C342F930046D438 /* Library.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Library.storyboard; sourceTree = "<group>"; };
+		8DE4D2792C34306D0046D438 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Library.swift; path = ../Library.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		8D9D86E72C32D5B0003DE950 /* hw2 */ = {
 			isa = PBXGroup;
 			children = (
+				8DE4D2792C34306D0046D438 /* Library.swift */,
+				8DE4D2752C342F930046D438 /* Library.storyboard */,
 				8D9D86FE2C32E00E003DE950 /* SecondViewController.swift */,
 				8D9D86E82C32D5B0003DE950 /* AppDelegate.swift */,
 				8D9D86EA2C32D5B0003DE950 /* SceneDelegate.swift */,
@@ -130,6 +136,7 @@
 			files = (
 				8D9D86F22C32D5B2003DE950 /* Assets.xcassets in Resources */,
 				8D9D86F52C32D5B2003DE950 /* Base in Resources */,
+				8DE4D2762C342F930046D438 /* Library.storyboard in Resources */,
 				8D9D86F02C32D5B0003DE950 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +150,7 @@
 			files = (
 				8D9D86ED2C32D5B0003DE950 /* ViewController.swift in Sources */,
 				8D9D86E92C32D5B0003DE950 /* AppDelegate.swift in Sources */,
+				8DE4D27A2C34306D0046D438 /* Library.swift in Sources */,
 				8D9D86EB2C32D5B0003DE950 /* SceneDelegate.swift in Sources */,
 				8D9D86FF2C32E00E003DE950 /* SecondViewController.swift in Sources */,
 			);
