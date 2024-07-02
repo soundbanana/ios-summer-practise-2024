@@ -8,9 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var userDefaults = UserDefaults.standard
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     @IBAction func button(_ sender: Any) {
         let loginText = login.text ?? " "
         let passwordText = password.text ?? " "
@@ -21,9 +23,6 @@ class ViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
             }
-        func viewDidLoad() {
-            super.viewDidLoad()
-        }
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
