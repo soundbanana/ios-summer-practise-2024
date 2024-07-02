@@ -10,17 +10,19 @@ class User{
     var name:String
     var number: String
     var mail:String
+    var image:UIImage
 
-    init(name: String, number: String, mail: String) {
+    init(name: String, number: String, mail: String,image:UIImage) {
         self.name = name
         self.number = number
         self.mail = mail
+        self.image = image
     }
 }
 
 class SecondViewController: UIViewController {
-    let dimas = User(name: "Дима", number: "89174654210", mail: "Dimas@gmail.com")
-    let timur = User(name: "Тимур", number: "89874034594", mail: "Timur@gmail.com")
+    let dimas = User(name: "Дима", number: "89174654210", mail: "Dimas@gmail.com",image: UIImage(named: "dimas"))
+    let timur = User(name: "Тимур", number: "89874034594", mail: "Timur@gmail.com",image: UIImage(named: "timur"))
     var login:String = ""
     var password:String
     = ""
@@ -41,14 +43,14 @@ class SecondViewController: UIViewController {
             FIO.text = "Имя \(dimas.name)"
             Number.text = "Номер телефона \(dimas.number)"
             Mail.text = "Почта \(dimas.mail)"
-            Avatar.image = UIImage(named: "dima")
+            Avatar.image = dimas.image
             InfAboutGuy.text = "Любит гулять и кушать люля"
         }
         if login == "Timur"{
             FIO.text = "Имя \(timur.name)"
             Number.text = "Номер телефона \(timur.number)"
             Mail.text = "Почта \(timur.mail)"
-            Avatar.image = UIImage(named: "timur")
+            Avatar.image = timur.image
             InfAboutGuy.text = "Любить выпить и покурить"
         }
         
