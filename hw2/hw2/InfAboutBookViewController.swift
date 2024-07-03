@@ -15,26 +15,20 @@ class InfAboutBookViewController: UIViewController {
     @IBOutlet weak var NameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateFavoriteButton()
         NameLabel.text = book.title
         imageBook.image = book.coverImage.image
         infLabel.text = book.description
         authorLabel.text = book.author
     }
     
-    @IBAction func Save(_ sender: Any) {
-        // Создаем экземпляр сториборда по его имени
-        let storyboard = UIStoryboard(name: "SavedBooks", bundle: nil)
-        
-        // Создаем экземпляр нового контроллера по его идентификатору
-        if let savedBooksViewController = storyboard.instantiateViewController(withIdentifier: "Saved") as? SavedBooksController {
-            // Передаем информацию о книге
-            savedBooksViewController.book = self.book
-            // Показываем новый контроллер модально
-            self.present(savedBooksViewController, animated: true, completion: nil)
-        
+    @IBOutlet weak var favoriteButton: UIButton!
+    func updateFavoriteButton() {
+            let buttonTitle = book.isFavorite ? "Удалить из избранного" : "Добавить в избранное"
+            favoriteButton.setTitle(buttonTitle, for: .normal)
         }
+    @IBAction func Save(_ sender: Any) {
+        book.isFavorite.toggle()
+        updateFavoriteButton()
     }
-
-
-
 }

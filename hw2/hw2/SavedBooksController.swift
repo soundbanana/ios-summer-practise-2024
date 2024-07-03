@@ -10,26 +10,28 @@ import UIKit
 class SavedBooksController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var book:Book?
-    var dataSource: [Book] = []
+    var books: [Book] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        if let book = book {
-                  dataSource.append(book)
-            collectionView.reloadData()
-              }
-        
+        collectionView.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        books = BookStorage.shared.books.filter({$0.isFavorite == true})
+        collectionView.reloadData()
     }
 }
+
 extension SavedBooksController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.count
+        books.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SaveCollectionViewCell", for: indexPath) as?  SaveCollectionViewCell else {return UICollectionViewCell()}
-        cell.config(book: dataSource[indexPath.row])
+        cell.config(book: books[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

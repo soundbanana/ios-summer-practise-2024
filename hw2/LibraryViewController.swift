@@ -20,32 +20,52 @@ class Book {
         self.isFavorite = isFavorite  
     }
 }
+class BookStorage {
+    static let shared = BookStorage()
+    
+    let books: [Book] = [
+        Book(
+            coverImage: UIImageView(image: UIImage(named: "1984_cover")),
+            title: "1984",
+            author: "Джордж Оруэлл",
+            description: "Классический роман-антиутопия, описывающий тоталитарное общество, где правительство полностью контролирует все аспекты жизни граждан."
+        ),
+        Book(
+            coverImage: UIImageView(image: UIImage(named: "war_and_peace_cover")),
+            title: "Война и мир",
+            author: "Лев Толстой",
+            description: "Эпический роман, охватывающий период войн Наполеона с Россией, а также жизни аристократических семей в России в XIX веке."
+        ),
+        Book(
+            coverImage: UIImageView(image: UIImage(named: "harry_potter_cover")),
+            title: "Гарри Поттер и философский камень",
+            author: "Джоан Роулинг",
+            description: "Первая книга серии о приключениях мальчика-волшебника Гарри Поттера, его друзей и врагов в магической школе Хогвартс."
+        ),
+        Book(
+            coverImage: UIImageView(image: UIImage(named: "master_and_margarita_cover")),
+            title: "Мастер и Маргарита",
+            author: "Михаил Булгаков",
+            description: "Философско-фантастический роман о встрече дьявола и его свиты с советскими гражданами в Москве 1930-х годов."
+        ),
+        Book(
+            coverImage: UIImageView(image: UIImage(named: "crime_and_punishment_cover")),
+            title: "Преступление и наказание",
+            author: "Фёдор Достоевский",
+            description: "Роман о студенте Раскольникове, который совершает убийство и пытается оправдать его с  помощью философских теорий."
+        )
+    ]
+}
+
 
 class LibraryViewController: UIViewController {
-    var userDefaults = UserDefaults.standard
-    
     @IBOutlet weak var tableView: UITableView!
-    var books: [Book] = []
+    var books:[Book]!
     override func viewDidLoad() {
             super.viewDidLoad()
-            
-            setupBooks()
-             
             tableView.dataSource = self
             tableView.delegate = self
-        }
-        
-        func setupBooks() {
-    
-            books.append(Book(coverImage: UIImageView(image: UIImage(named:"1984_cover")), title: "1984", author: "Джордж Оруэлл", description: "Классический роман-антиутопия, описывающий тоталитарное общество, где правительство полностью контролирует все аспекты жизни граждан."))
-            
-            books.append(Book(coverImage: UIImageView(image: UIImage(named: "war_and_peace_cover")), title: "Война и мир", author: "Лев Толстой", description: "Эпический роман, охватывающий период войн Наполеона с Россией, а также жизни аристократических семей в России в XIX веке."))
-            
-            books.append(Book(coverImage: UIImageView(image: UIImage(named: "harry_potter_cover")), title: "Гарри Поттер и философский камень", author: "Джоан Роулинг", description: "Первая книга серии о приключениях мальчика-волшебника Гарри Поттера, его друзей и врагов в магической школе Хогвартс."))
-            
-            books.append(Book(coverImage: UIImageView(image: UIImage(named: "master_and_margarita_cover")), title: "Мастер и Маргарита", author: "Михаил Булгаков", description: "Философско-фантастический роман о встрече дьявола и его свиты с советскими гражданами в Москве 1930-х годов."))
-            
-            books.append(Book(coverImage: UIImageView(image: UIImage(named: "crime_and_punishment_cover")), title: "Преступление и наказание", author: "Фёдор Достоевский", description: "Роман о студенте Раскольникове, который совершает убийство и пытается оправдать его с помощью философских теорий."))
+            books = BookStorage.shared.books
         }
     }
     

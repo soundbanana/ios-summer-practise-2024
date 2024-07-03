@@ -126,6 +126,7 @@
                     <connections>
                         <outlet property="NameLabel" destination="8dC-y9-DLQ" id="O2h-mR-fga"/>
                         <outlet property="authorLabel" destination="GaK-gH-VLk" id="Obz-dD-ZGl"/>
+                        <outlet property="favoriteButton" destination="Lnt-eK-I3y" id="mPy-Bm-ggl"/>
                         <outlet property="imageBook" destination="fS1-3T-g7O" id="NwH-32-nPO"/>
                         <outlet property="infLabel" destination="cqc-ks-uRu" id="90B-l8-LwN"/>
                     </connections>
