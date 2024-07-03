@@ -1,13 +1,13 @@
 //
-//  Library.swift
+//  BookViewController.swift
 //  hw2
 //
-//  Created by Артур Мавликаев on 02.07.2024.
+//  Created by Артур Мавликаев on 03.07.2024.
 //
 
 import UIKit
 
-class Library: UIViewController {
+class BookViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

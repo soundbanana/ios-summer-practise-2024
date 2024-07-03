@@ -23,7 +23,7 @@ class User{
 class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
+        self.tabBarController?.navigationItem.hidesBackButton = true
         print("SecondViewController viewDidLoad")
         checkLogin()
     }
@@ -47,6 +47,7 @@ class SecondViewController: UIViewController {
         Avatar.image = user.image
         InfAboutGuy.text = infoText
     }
+   
     private func checkLogin() {
         if login == "Dimas" {
             updateUserInfo(user: dimas, infoText: "Любит гулять и кушать люля")
@@ -55,6 +56,7 @@ class SecondViewController: UIViewController {
         }
     }
     func config(password:String, login:String){
+        print("config")
         self.password = password
         self.login = login
     }
