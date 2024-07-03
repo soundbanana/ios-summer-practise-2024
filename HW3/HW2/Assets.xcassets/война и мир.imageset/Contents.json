@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "война и мир.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
