@@ -43,15 +43,14 @@ class BookPageViewController: UIViewController {
 
     
     @IBAction func addToFavouritesPressed() {
-        
+        FavouritesViewController().favs.append(book!)
         if ((book?.isFavourite) == true){
             let alert = UIAlertController(title: "Error", message: "The book " + book!.title+" has already been added to favourites", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
         }else{
-            favouriteBooks?.append(book!)
             book?.isFavourite = true
-            print(favouriteBooks?[0])
         }
+        print(FavouritesViewController().favs.count)
     }
 }

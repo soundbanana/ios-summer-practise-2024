@@ -17,20 +17,22 @@ class Book {
     var author: String
     var description: String
     var isFavourite: Bool
+    var indexInSource: Int
     
-    init(coverImage: UIImageView, title: String, author: String, description: String, isFavourite: Bool = false) {
+    init(coverImage: UIImageView, title: String, author: String, description: String, isFavourite: Bool = false, indexInSource: Int) {
         self.coverImage = coverImage
         self.title = title
         self.author = author
         self.description = description
         self.isFavourite = isFavourite
+        self.indexInSource = indexInSource
     }
 }
 
 
 class LibraryViewController: UIViewController{
 
-    var dataSource: [Book] = [Book(coverImage: UIImageView(image: UIImage(named: "gou")), title: "Горе от ума", author: "А. С. Грибоедов", description: "Самонадеянное знание"), Book(coverImage: UIImageView(image: UIImage(named: "vim")), title: "Война и мир", author: "Л. Н. Толстой", description: "История, любовь"), Book(coverImage: UIImageView(image: UIImage(named: "tt")), title: "Три товарища", author: "Э. М. Ремарк", description: "Дружба, судьбы, Германия"), Book(coverImage: UIImageView(image: UIImage(named: "451")), title: "451 градус по фаренгейту", author: "Р. Д. Брэдбери", description: "Книги, цензура"), Book(coverImage: UIImageView(image: UIImage(named: "mi")), title: "Мартин Иден", author: "Джек Лондон", description: "Самопоиск, одиночество"),Book(coverImage: UIImageView(image: UIImage(named: "npvz")), title: "Над пропастью во ржи", author: "Д. Д. Сэлинджер", description: "Поиск смысла")]
+    var dataSource: [Book] = [Book(coverImage: UIImageView(image: UIImage(named: "gou")), title: "Горе от ума", author: "А. С. Грибоедов", description: "Самонадеянное знание", indexInSource: 0), Book(coverImage: UIImageView(image: UIImage(named: "vim")), title: "Война и мир", author: "Л. Н. Толстой", description: "История, любовь", indexInSource: 1), Book(coverImage: UIImageView(image: UIImage(named: "tt")), title: "Три товарища", author: "Э. М. Ремарк", description: "Дружба, судьбы, Германия", indexInSource: 2), Book(coverImage: UIImageView(image: UIImage(named: "451")), title: "451 градус по фаренгейту", author: "Р. Д. Брэдбери", description: "Книги, цензура", indexInSource: 3), Book(coverImage: UIImageView(image: UIImage(named: "mi")), title: "Мартин Иден", author: "Джек Лондон", description: "Самопоиск, одиночество", indexInSource: 4),Book(coverImage: UIImageView(image: UIImage(named: "npvz")), title: "Над пропастью во ржи", author: "Д. Д. Сэлинджер", description: "Поиск смысла", indexInSource: 5)]
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {

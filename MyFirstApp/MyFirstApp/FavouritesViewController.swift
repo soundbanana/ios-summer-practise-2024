@@ -7,7 +7,10 @@
 
 import UIKit
 
+
 class FavouritesViewController: UIViewController{
+    var favs: [Book] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
